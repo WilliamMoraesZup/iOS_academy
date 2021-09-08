@@ -1,8 +1,7 @@
  
 import UIKit
 
-// Write a function that returns the smallest number of an array of integers
-
+//2- Write a function that returns the smallest number of an array of integers
 
 let arrayNumbers = [9,3,4,1,2,5,1,6,4,3,5,7,3,2,10,4]
 

@@ -1,3 +1,5 @@
+//1- Write a function that returns true if all letters are different in a given string
+
 import Foundation
 
 let validText = "abcdefg"
