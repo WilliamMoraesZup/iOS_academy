@@ -1,7 +1,14 @@
-//: [Previous](@previous)
+//6- Write a function that returns the amount of strings in an array that starts with a given character
 
 import Foundation
 
-var greeting = "Hello, playground"
+let arrayWords = ["Banana","Maça","Melancia","Uva","berinjela","Goiaba"]
 
-//: [Next](@next)
+func returnStart( letter: String, words : [String]) -> [String ]{
+ 
+    let filteredWords =    words.filter {$0.lowercased().hasPrefix(letter.lowercased())}
+    return filteredWords
+}
+
+
+print( returnStart( letter: "B", words: arrayWords) )
