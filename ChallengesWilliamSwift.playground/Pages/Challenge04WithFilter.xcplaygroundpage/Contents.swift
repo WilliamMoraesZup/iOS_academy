@@ -1,5 +1,4 @@
-
-//4- Write a function that returns N greatest numbers of an array of floats
+//: [Previous](@previous)
 
 import Foundation
 
@@ -10,13 +9,8 @@ var greatest : [Float] = []
 
 func returnGreatestValue(numbers : [Float], greaterThan: Float ) -> [Float] {
     
-    for number in numbers {
-        if number >  greaterThan  {
-            greatest.append(number)
-        }
-    }
-    
-    return greatest
+ return numbers.filter{ (e) -> e > greaterThan}
+ 
     }
     
 print(returnGreatestValue(numbers: arrayFloats,greaterThan: 30))

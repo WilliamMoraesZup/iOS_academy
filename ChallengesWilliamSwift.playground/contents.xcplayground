@@ -9,5 +9,8 @@
         <page name='Challenge06'/>
         <page name='Challenge07'/>
         <page name='Challenge08'/>
+        <page name='Challenge04Revised'/>
+        <page name='Challenge08RefactoredWorking'/>
+        <page name='Challenge04WithFilter'/>
     </pages>
 </playground>
