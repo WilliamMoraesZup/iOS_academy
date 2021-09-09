@@ -2,9 +2,9 @@
 
 import Foundation
 
-let ticTacToeBoard : [[String]] =  [["e","O","u"],
-                                    ["O","u","X"],
-                                    ["u","X","e"]]
+let ticTacToeBoard : [[String]] =  [["X","O","O"],
+                                    ["O","O","X"],
+                                    ["O","X","X"]]
 
 func whoWin(board : [[String]] ){
     // var horizontal = 0
@@ -15,6 +15,7 @@ func whoWin(board : [[String]] ){
     
     var yElements: [String] = []
     var diagElemnts: [String] = []
+    var diagElemnts2: [String] = []
     
     for i in 0..<3 {
         for y in 0..<3 {
@@ -40,35 +41,41 @@ func whoWin(board : [[String]] ){
         
         //Checa Diagonal 1
         var diagonal = 0
-        for diag in 0..<3{
+        for e in 0..<3{
         
-            diagElemnts.append(board[diag][diagonal])
-            diagonal+1
+            diagElemnts.append(board[e][diagonal])
+           
+            diagonal+=1
         }
-        if diagElemnts.count==3 {  print("verificando linha Diag... \(diagElemnts)") }
+        if diagElemnts.count==3 {  print("verificando linha Diag... \(diagElemnts)")
+            check(points: diagElemnts)
+           }
+  
+        var diagonal2 = 0
         
-//        diagonal = 2
-//        diagElemnts = []
-//
-//        for diag in 0..<3{
-//
-//            diagElemnts.append(board[diag][diagonal])
-//            diagonal-1
-//        }
-//        if diagElemnts.count==3 {  print("verificando linha Diag... \(diagElemnts)") }
+        for e in stride(from: 2, through: 0, by: -1) {
+
+            diagElemnts2.append(board[diagonal2][e])
+           diagonal2 += 1
+        }
         
+        if diagElemnts2.count==3 {
+            print("verificando linha Diag 2... \(diagElemnts2)")
+            check(points: diagElemnts2)
+            }
+         
     }
 }
 
 func check(points : [String]){
     
     if points.count == 3 && points.allSatisfy ({ $0.elementsEqual("O") }) {
-        print("BATEU O")
+        print("Venceu -> O")
     }
     
     else if points.count == 3 && points.allSatisfy ({ $0.elementsEqual("X") }) {
 
-        print("BATEU X")
+        print("Venceu -> X")
     }
 }
 
